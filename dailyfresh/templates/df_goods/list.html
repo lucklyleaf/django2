@@ -1,0 +1,75 @@
+{% extends 'df_goods/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body2 %}
+
+	<div class="main_wrap clearfix">
+		<div class="l_wrap fl clearfix">
+			<div class="new_goods">
+				<h3>新品推荐</h3>
+				<ul>
+                    {% for new in news %}
+					<li>
+						<a href="/{{ new.id }}"><img src="/static/{{ new.gpic }}"></a>
+						<h4><a href="/{{ new.id }}">{{new.gtitle|slice:'8'}}</a></h4>
+						<div class="prize">￥{{ new.gprice }}</div>
+					</li>
+                    {% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="r_wrap fr clearfix">
+			<div class="sort_bar">
+				<a href="/list/{{ typeinfo.id }}_1_1"
+                {% if sort == "1" %}
+                class="active"
+                {% endif %}
+                >默认</a>
+				<a href="/list/{{ typeinfo.id }}_1_2"
+                {% if sort == "2" %}
+                class="active"
+                {% endif %}
+                >价格</a>
+				<a href="/list/{{ typeinfo.id }}_1_3"
+                {% if sort == "3" %}
+                class="active"
+                {% endif %}
+                >人气</a>
+			</div>
+
+			<ul class="goods_type_list clearfix">
+                {% for g in page %}
+				<li>
+					<a href="/{{ g.id }}"><img src="/static/{{ g.gpic }}"></a>
+					<h4><a href="/{{ g.id }}">{{g.gitile}}</a></h4>
+					<div class="operate">
+						<span class="prize">￥{{g.gprice}}</span>
+						<span class="unit">{{g.gprice}}/{{g.gunit}}</span>
+						<a href="#" class="add_goods" title="加入购物车"></a>
+					</div>
+				</li>
+                {% endfor %}
+            </ul>
+
+
+			<div class="pagenation">
+                {% if page.has_previous %}
+                <a href="/list/{{ typeinfo.id }}_{{ page.previous_page_number }}_{{ sort }}"><上一页</a>
+                {% endif %}
+                {% for pindex in paginator.page_range %}
+                {% if pindex == page.number %}
+                <a href="#" class="active">{{ pindex }}</a>
+                {% else %}
+				<a href="/list{{ typeinfo.id }}_{{ pindex }}_{{ sort }}">{{ pindex }}</a>
+                {% endif %}
+                {% endfor %}
+
+                {% if page.has_next %}
+				<a href="/list/{{ typeinfo.id }}_{{ page.next_page_number }}_{{ sort }}">下一页></a>
+                {% endif %}
+			</div>
+        </div>
+	</div>
+
+{% endblock body2%}

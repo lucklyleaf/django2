@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block body1 %}
+    <div class="main_con clearfix">
+		<div class="left_menu_con clearfix">
+			<h3>用户中心</h3>
+			<ul id="luck">
+				<li><a href="/user/info" >· 个人信息</a></li>
+				<li><a href="/user/order">· 全部订单</a></li>
+				<li><a href="/user/site" class="active">· 收货地址</a></li>
+			</ul>
+
+		</div>
+		<div class="right_content clearfix">
+				<h3 class="common_title2">收货地址</h3>
+				<div class="site_con">
+					<dl>
+						<dt>当前地址：</dt>
+						<dd>{{ user.uaddress }} （{{user.ushou}} 收） {{ user.uphone }}</dd>
+					</dl>					
+				</div>
+				<h3 class="common_title2">编辑地址</h3>
+				<div class="site_con">
+					<form method="post" action="/user/site">
+                        {% csrf_token %}
+						<div class="form_group">
+							<label>收件人：</label>
+							<input type="text" name="ushou" id="ushow">
+                            <span style="color: crimson"></span>
+						</div>
+
+						<div class="form_group form_group2">
+							<label>详细地址：</label>
+							<textarea class="site_area" name="uaddress" id="uaddress"></textarea>
+                            <span style="color: crimson"></span>
+						</div>
+						<div class="form_group">
+							<label>邮编：</label>
+							<input type="text" name="uyoubian" id="uyoubian">
+                            <span style="color: crimson"></span>
+						</div>
+						<div class="form_group">
+							<label>手机：</label>
+							<input type="text" name="uphone" id="uphone">
+                            <span style="color: crimson"></span>
+						</div>
+						<input type="submit" name="" value="提交" class="info_submit">
+					</form>
+				</div>
+		</div>
+	</div>
+<script>
+    $(function () {
+        var ushow_error = false;
+        var uaddress_error = false;
+        var uyoubian_error = false;
+        var uphone_error = false;
+        $('#ushow').blur(function () {
+            if($(this).val() == ''){
+                $(this).next().html('请输入收件人！')
+                $(this).next().show()
+                ushow_error = false
+            }else {
+                ushow_error = true;
+                $(this).next().hide()
+            }
+        })
+        $('#uaddress').blur(function () {
+            if($(this).val() == '') {
+                $(this).next().html('请输入地址')
+                $(this).next().show()
+                uaddress_error = false
+            }else{
+                uaddress_error = true;
+                $(this).next().hide()
+            }
+        })
+         $('#uyoubian').blur(function () {
+             var re = /^[\d]{5,6}$/;
+            if($(this).val() != ''&& re.test($(this).val())) {
+                uyoubian_error = true;
+                $(this).next().hide()
+            }
+            else{
+                $(this).next().html('输入错误')
+                $(this).next().show()
+                uyoubian_error = false
+            }
+        })
+         $('#uphone').blur(function () {
+             var re=/^[\d]{11}$/
+             if($(this).val() != ''&&re.test($(this).val())) {
+                 uphone_error = true;
+                 $(this).next().hide()
+
+             }
+             else{
+                 $(this).next().html('输入错误')
+                 $(this).next().show()
+                 uphone_error = false
+             }
+        })
+        $('.info_submit').click(function () {
+            if(uphone_error == true&&uaddress_error == true&&ushow_error == true&&uyoubian_error == true){
+                return true;
+            }else{
+                alert('收货人输入信息错误')
+                return false;
+            }
+        })
+    })
+</script>
+{% endblock body1 %}

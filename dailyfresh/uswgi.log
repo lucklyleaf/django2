@@ -1,0 +1,354 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Mar 18 19:53:43 2020] ***
+compiled with version: 5.4.0 20160609 on 04 March 2020 02:37:52
+os: Linux-4.15.0-88-generic #88~16.04.1-Ubuntu SMP Wed Feb 12 04:19:15 UTC 2020
+nodename: lucklytree
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 3
+current working directory: /home/lucklyleaf/desktop/django2/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/lucklyleaf/.virtualenvs/py_Django/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/lucklyleaf/desktop/django2
+your processes number limit is 11129
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:39557 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Oct  8 2019, 14:14:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x17fb940
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file django2/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12956)
+spawned uWSGI worker 1 (pid: 12959, cores: 2)
+spawned uWSGI worker 2 (pid: 12960, cores: 2)
+spawned uWSGI worker 3 (pid: 12961, cores: 2)
+spawned uWSGI worker 4 (pid: 12962, cores: 2)
+spawned uWSGI http 1 (pid: 12963)
+--- no python application found, check your startup logs for errors ---
+[pid: 12960|app: -1|req: -1/1] 127.0.0.1 () {46 vars in 897 bytes} [Wed Mar 18 19:58:56 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 12961|app: -1|req: -1/2] 127.0.0.1 () {44 vars in 815 bytes} [Wed Mar 18 19:58:57 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 12963)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Mar 18 20:02:46 2020] ***
+compiled with version: 5.4.0 20160609 on 04 March 2020 02:37:52
+os: Linux-4.15.0-88-generic #88~16.04.1-Ubuntu SMP Wed Feb 12 04:19:15 UTC 2020
+nodename: lucklytree
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 3
+current working directory: /home/lucklyleaf/desktop/django2/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/lucklyleaf/.virtualenvs/py_Django/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/lucklyleaf/desktop/django2
+your processes number limit is 11129
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:43463 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Oct  8 2019, 14:14:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0xa52940
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file django2/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13275)
+spawned uWSGI worker 1 (pid: 13278, cores: 2)
+spawned uWSGI worker 2 (pid: 13279, cores: 2)
+spawned uWSGI worker 3 (pid: 13280, cores: 2)
+spawned uWSGI worker 4 (pid: 13281, cores: 2)
+spawned uWSGI http 1 (pid: 13282)
+--- no python application found, check your startup logs for errors ---
+[pid: 13280|app: -1|req: -1/1] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:08:29 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13278|app: -1|req: -1/2] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:08:29 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13280|app: -1|req: -1/3] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:08:30 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13281|app: -1|req: -1/4] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:08:30 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13280|app: -1|req: -1/5] 127.0.0.1 () {44 vars in 893 bytes} [Wed Mar 18 20:09:07 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13279|app: -1|req: -1/6] 127.0.0.1 () {44 vars in 825 bytes} [Wed Mar 18 20:09:07 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13281|app: -1|req: -1/7] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:09:19 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 13278|app: -1|req: -1/8] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:09:19 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13280|app: -1|req: -1/9] 127.0.0.1 () {44 vars in 894 bytes} [Wed Mar 18 20:09:23 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13278|app: -1|req: -1/10] 127.0.0.1 () {44 vars in 826 bytes} [Wed Mar 18 20:09:23 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 13281|app: -1|req: -1/11] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:16:33 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 13278|app: -1|req: -1/12] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:16:34 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 13282)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Mar 18 20:17:39 2020] ***
+compiled with version: 5.4.0 20160609 on 04 March 2020 02:37:52
+os: Linux-4.15.0-88-generic #88~16.04.1-Ubuntu SMP Wed Feb 12 04:19:15 UTC 2020
+nodename: lucklytree
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 3
+current working directory: /home/lucklyleaf/desktop/django2/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/lucklyleaf/.virtualenvs/py_Django/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/lucklyleaf/desktop/django2
+your processes number limit is 11129
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:39629 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Oct  8 2019, 14:14:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x18a6940
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+failed to open python file django2/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13504)
+spawned uWSGI worker 1 (pid: 13507, cores: 2)
+spawned uWSGI worker 2 (pid: 13508, cores: 2)
+spawned uWSGI worker 3 (pid: 13509, cores: 2)
+spawned uWSGI worker 4 (pid: 13510, cores: 2)
+spawned uWSGI http 1 (pid: 13511)
+--- no python application found, check your startup logs for errors ---
+[pid: 13509|app: -1|req: -1/1] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:17:43 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13510|app: -1|req: -1/2] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:17:43 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13508|app: -1|req: -1/3] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:17:45 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13507|app: -1|req: -1/4] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:17:45 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13509|app: -1|req: -1/5] 127.0.0.1 () {46 vars in 917 bytes} [Wed Mar 18 20:20:36 2020] GET /1 => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13507|app: -1|req: -1/6] 127.0.0.1 () {44 vars in 825 bytes} [Wed Mar 18 20:20:36 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13510|app: -1|req: -1/7] 127.0.0.1 () {46 vars in 914 bytes} [Wed Mar 18 20:20:43 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13507|app: -1|req: -1/8] 127.0.0.1 () {44 vars in 823 bytes} [Wed Mar 18 20:20:43 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13509|app: -1|req: -1/9] 127.0.0.1 () {46 vars in 919 bytes} [Wed Mar 18 20:20:55 2020] GET /user/login/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13510|app: -1|req: -1/10] 127.0.0.1 () {44 vars in 826 bytes} [Wed Mar 18 20:20:55 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13510|app: -1|req: -1/11] 127.0.0.1 () {46 vars in 896 bytes} [Wed Mar 18 20:26:32 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13510|app: -1|req: -1/12] 127.0.0.1 () {44 vars in 814 bytes} [Wed Mar 18 20:26:32 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 13508|app: -1|req: -1/13] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:33:05 2020] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 13510|app: -1|req: -1/14] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:33:05 2020] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 13511)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Mar 18 20:33:34 2020] ***
+compiled with version: 5.4.0 20160609 on 04 March 2020 02:37:52
+os: Linux-4.15.0-88-generic #88~16.04.1-Ubuntu SMP Wed Feb 12 04:19:15 UTC 2020
+nodename: lucklytree
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 3
+current working directory: /home/lucklyleaf/desktop/django2/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/lucklyleaf/.virtualenvs/py_Django/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/lucklyleaf/desktop/django2/dailyfresh
+your processes number limit is 11129
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:37801 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Oct  8 2019, 14:14:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x20f5950
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x20f5950 pid: 13674 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13674)
+spawned uWSGI worker 1 (pid: 13679, cores: 2)
+spawned uWSGI worker 2 (pid: 13680, cores: 2)
+spawned uWSGI worker 3 (pid: 13681, cores: 2)
+spawned uWSGI worker 4 (pid: 13683, cores: 2)
+spawned uWSGI http 1 (pid: 13686)
+[pid: 13680|app: 0|req: 1/1] 127.0.0.1 () {48 vars in 928 bytes} [Wed Mar 18 20:33:38 2020] GET / => generated 77 bytes in 768 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13683|app: 0|req: 1/2] 127.0.0.1 () {48 vars in 868 bytes} [Wed Mar 18 20:33:39 2020] GET /favicon.ico => generated 77 bytes in 249 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 1.777 seconds.
+Prefix dict has been built successfully.
+[pid: 13679|app: 0|req: 1/3] 127.0.0.1 () {46 vars in 917 bytes} [Wed Mar 18 20:33:51 2020] GET /1 => generated 8329 bytes in 3385 msecs (HTTP/1.1 200) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 13683|app: 0|req: 2/4] 127.0.0.1 () {46 vars in 888 bytes} [Wed Mar 18 20:33:54 2020] GET /static/css/main.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13679|app: 0|req: 2/5] 127.0.0.1 () {46 vars in 926 bytes} [Wed Mar 18 20:33:54 2020] GET /static/goods003.jpg => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13680|app: 0|req: 2/6] 127.0.0.1 () {46 vars in 926 bytes} [Wed Mar 18 20:33:54 2020] GET /static/goods009.jpg => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13680|app: 0|req: 3/7] 127.0.0.1 () {44 vars in 871 bytes} [Wed Mar 18 20:33:55 2020] GET /static/goods009.jpg => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13681|app: 0|req: 1/8] 127.0.0.1 () {46 vars in 925 bytes} [Wed Mar 18 20:33:55 2020] GET  => generated 77 bytes in 221 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13681|app: 0|req: 2/9] 127.0.0.1 () {42 vars in 822 bytes} [Wed Mar 18 20:33:55 2020] GET /static/goods009.jpg => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13683|app: 0|req: 3/10] 127.0.0.1 () {48 vars in 957 bytes} [Wed Mar 18 20:34:00 2020] GET  => generated 77 bytes in 2 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13683|app: 0|req: 4/11] 127.0.0.1 () {42 vars in 823 bytes} [Wed Mar 18 20:34:00 2020] GET /static/goods009.jpg => generated 77 bytes in 0 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13680|app: 0|req: 4/12] 127.0.0.1 () {42 vars in 823 bytes} [Wed Mar 18 20:34:03 2020] GET /static/goods009.jpg => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13679|app: 0|req: 3/13] 127.0.0.1 () {46 vars in 932 bytes} [Wed Mar 18 20:34:14 2020] GET /user/login/ => generated 3611 bytes in 21 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 13683|app: 0|req: 5/14] 127.0.0.1 () {44 vars in 834 bytes} [Wed Mar 18 20:34:14 2020] GET /static/css/main.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13679|app: 0|req: 4/15] 127.0.0.1 () {42 vars in 823 bytes} [Wed Mar 18 20:34:14 2020] GET /static/goods009.jpg => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13680|app: 0|req: 5/16] 127.0.0.1 () {56 vars in 1138 bytes} [Wed Mar 18 20:34:58 2020] POST /user/login_handle => generated 0 bytes in 349 msecs (HTTP/1.1 302) 7 headers in 317 bytes (1 switches on core 1)
+[pid: 13683|app: 0|req: 6/17] 127.0.0.1 () {50 vars in 1034 bytes} [Wed Mar 18 20:34:59 2020] GET /user/info => generated 3588 bytes in 62 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 13680|app: 0|req: 6/18] 127.0.0.1 () {44 vars in 851 bytes} [Wed Mar 18 20:34:59 2020] GET /static/css/main.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13680|app: 0|req: 7/19] 127.0.0.1 () {44 vars in 890 bytes} [Wed Mar 18 20:34:59 2020] GET /static/goods009.jpg => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 13683|app: 0|req: 7/20] 127.0.0.1 () {50 vars in 1034 bytes} [Wed Mar 18 20:35:13 2020] GET /user/info => generated 3588 bytes in 77 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 13679|app: 0|req: 5/21] 127.0.0.1 () {44 vars in 851 bytes} [Wed Mar 18 20:35:13 2020] GET /static/css/main.css => generated 77 bytes in 1 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 13681|app: 0|req: 3/22] 127.0.0.1 () {44 vars in 890 bytes} [Wed Mar 18 20:35:13 2020] GET /static/goods009.jpg => generated 77 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 100 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 13686)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Mar 21 09:46:32 2020] ***
+compiled with version: 5.4.0 20160609 on 04 March 2020 02:37:52
+os: Linux-4.15.0-91-generic #92~16.04.1-Ubuntu SMP Fri Feb 28 14:57:22 UTC 2020
+nodename: lucklytree
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 3
+current working directory: /home/lucklyleaf/desktop/django2/dailyfresh
+writing pidfile to uwsgi.pid
+detected binary path: /home/lucklyleaf/.virtualenvs/py_Django/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/lucklyleaf/desktop/django2/dailyfresh
+your processes number limit is 11129
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:35863 (port auto-assigned) fd 3
+Python version: 2.7.12 (default, Oct  8 2019, 14:14:10)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x11319c0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x11319c0 pid: 4244 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4244)
+spawned uWSGI worker 1 (pid: 4254, cores: 2)
+spawned uWSGI worker 2 (pid: 4255, cores: 2)
+spawned uWSGI worker 3 (pid: 4257, cores: 2)
+spawned uWSGI worker 4 (pid: 4258, cores: 2)
+spawned uWSGI http 1 (pid: 4259)
+[pid: 4257|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 910 bytes} [Sat Mar 21 09:46:42 2020] GET / => generated 6700 bytes in 4591 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.075 seconds.
+Prefix dict has been built successfully.
+[pid: 4257|app: 0|req: 2/2] 127.0.0.1 () {48 vars in 1009 bytes} [Sat Mar 21 10:07:43 2020] GET /search/?q=%E9%A6%99%E8%95%89 => generated 3833 bytes in 1769 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4254|app: 0|req: 1/3] 127.0.0.1 () {48 vars in 1002 bytes} [Sat Mar 21 10:07:51 2020] GET /list/1_1_1 => generated 4919 bytes in 1710 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 3/4] 127.0.0.1 () {48 vars in 984 bytes} [Sat Mar 21 10:07:59 2020] GET /list/3_1_1 => generated 3896 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 4/5] 127.0.0.1 () {48 vars in 984 bytes} [Sat Mar 21 10:08:03 2020] GET /list/1_1_1 => generated 4919 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 1/6] 127.0.0.1 () {48 vars in 984 bytes} [Sat Mar 21 10:08:06 2020] GET /list/1_1_1 => generated 4919 bytes in 1434 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4258|app: 0|req: 1/7] 127.0.0.1 () {48 vars in 984 bytes} [Sat Mar 21 10:08:12 2020] GET /list/1_1_1 => generated 4919 bytes in 834 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 2/8] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:08:15 2020] GET /list/1_1_1 => generated 4919 bytes in 295 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 5/9] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:08:17 2020] GET /list/1_1_1 => generated 4919 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4258|app: 0|req: 2/10] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:08:18 2020] GET /list/1_1_1 => generated 4919 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 3/11] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:09 2020] GET /list/1_1_1 => generated 4919 bytes in 67 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 6/12] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:10 2020] GET /list/1_1_1 => generated 4919 bytes in 756 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 4/13] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:13 2020] GET /list/1_1_1 => generated 4919 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 5/14] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:20 2020] GET /list/1_1_1 => generated 4919 bytes in 374 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 6/15] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:22 2020] GET /list/1_1_1 => generated 4919 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 7/16] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:23 2020] GET /list/1_1_1 => generated 4919 bytes in 878 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 7/17] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:24 2020] GET /list/1_1_1 => generated 4919 bytes in 62 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 8/18] 127.0.0.1 () {50 vars in 1016 bytes} [Sat Mar 21 10:12:43 2020] GET /list/1_1_1 => generated 4919 bytes in 506 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 8/19] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:45 2020] GET /list/1_1_1 => generated 4919 bytes in 73 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 9/20] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:47 2020] GET /list/1_1_1 => generated 4919 bytes in 497 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 9/21] 127.0.0.1 () {50 vars in 1016 bytes} [Sat Mar 21 10:12:49 2020] GET /list/1_1_1 => generated 4919 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4254|app: 0|req: 2/22] 127.0.0.1 () {50 vars in 1016 bytes} [Sat Mar 21 10:12:50 2020] GET /list/1_1_1 => generated 4919 bytes in 166 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 10/23] 127.0.0.1 () {50 vars in 1016 bytes} [Sat Mar 21 10:12:50 2020] GET /list/1_1_1 => generated 4919 bytes in 56 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 10/24] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:52 2020] GET /list/1_1_1 => generated 4919 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4254|app: 0|req: 3/25] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:53 2020] GET /list/1_1_1 => generated 4919 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 11/26] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:53 2020] GET /list/1_1_1 => generated 4919 bytes in 287 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4254|app: 0|req: 4/27] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:54 2020] GET /list/1_1_1 => generated 4919 bytes in 57 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4258|app: 0|req: 3/28] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:54 2020] GET /list/1_1_1 => generated 4919 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 11/29] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:54 2020] GET /list/1_1_1 => generated 4919 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 12/30] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:55 2020] GET /list/1_1_1 => generated 4919 bytes in 93 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4254|app: 0|req: 5/31] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:55 2020] GET /list/1_1_1 => generated 4919 bytes in 187 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 12/32] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:56 2020] GET /list/1_1_1 => generated 4919 bytes in 138 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 13/33] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:56 2020] GET /list/1_1_1 => generated 4919 bytes in 179 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4254|app: 0|req: 6/34] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:12:57 2020] GET /list/1_1_1 => generated 4919 bytes in 91 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 14/35] 127.0.0.1 () {48 vars in 985 bytes} [Sat Mar 21 10:13:03 2020] GET /list/1_1_1 => generated 4919 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 13/36] 127.0.0.1 () {48 vars in 983 bytes} [Sat Mar 21 10:13:05 2020] GET /user/info => generated 3569 bytes in 117 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 14/37] 127.0.0.1 () {48 vars in 982 bytes} [Sat Mar 21 10:13:08 2020] GET /user/info => generated 3569 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4254|app: 0|req: 7/38] 127.0.0.1 () {48 vars in 982 bytes} [Sat Mar 21 10:13:09 2020] GET /user/info => generated 3569 bytes in 133 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4258|app: 0|req: 4/39] 127.0.0.1 () {48 vars in 982 bytes} [Sat Mar 21 10:13:09 2020] GET /user/info => generated 3569 bytes in 1113 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 15/40] 127.0.0.1 () {48 vars in 982 bytes} [Sat Mar 21 10:13:12 2020] GET /user/info => generated 3569 bytes in 78 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 15/41] 127.0.0.1 () {48 vars in 982 bytes} [Sat Mar 21 10:13:13 2020] GET /user/info => generated 3569 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 16/42] 127.0.0.1 () {48 vars in 982 bytes} [Sat Mar 21 10:13:14 2020] GET /user/info => generated 3569 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 16/43] 127.0.0.1 () {48 vars in 980 bytes} [Sat Mar 21 10:13:15 2020] GET /df_cart/ => generated 8354 bytes in 249 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 17/44] 127.0.0.1 () {48 vars in 979 bytes} [Sat Mar 21 10:13:16 2020] GET /df_cart/ => generated 8354 bytes in 178 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 18/45] 127.0.0.1 () {48 vars in 979 bytes} [Sat Mar 21 10:13:18 2020] GET /df_cart/ => generated 8354 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 17/46] 127.0.0.1 () {50 vars in 1010 bytes} [Sat Mar 21 10:14:03 2020] GET /df_cart/ => generated 8354 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 18/47] 127.0.0.1 () {48 vars in 979 bytes} [Sat Mar 21 10:14:05 2020] GET /df_cart/ => generated 8354 bytes in 122 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4254|app: 0|req: 8/48] 127.0.0.1 () {48 vars in 979 bytes} [Sat Mar 21 10:14:08 2020] GET /df_cart/ => generated 8354 bytes in 288 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 19/49] 127.0.0.1 () {48 vars in 981 bytes} [Sat Mar 21 10:14:09 2020] GET /user/info => generated 3569 bytes in 107 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 3.163 seconds.
+Prefix dict has been built successfully.
+[pid: 4255|app: 0|req: 20/50] 127.0.0.1 () {48 vars in 1019 bytes} [Sat Mar 21 10:14:12 2020] GET /search/?q=%E9%A6%99%E8%95%89 => generated 3834 bytes in 3311 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 21/51] 127.0.0.1 () {48 vars in 983 bytes} [Sat Mar 21 10:14:19 2020] GET / => generated 6700 bytes in 121 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 22/52] 127.0.0.1 () {50 vars in 1014 bytes} [Sat Mar 21 10:15:30 2020] GET / => generated 6700 bytes in 387 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 23/53] 127.0.0.1 () {48 vars in 973 bytes} [Sat Mar 21 10:15:35 2020] GET /user/info => generated 3570 bytes in 155 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4258|app: 0|req: 5/54] 127.0.0.1 () {48 vars in 964 bytes} [Sat Mar 21 10:15:37 2020] GET / => generated 6700 bytes in 540 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 19/55] 127.0.0.1 () {48 vars in 975 bytes} [Sat Mar 21 10:15:42 2020] GET /user/order => generated 7393 bytes in 164 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4255|app: 0|req: 24/56] 127.0.0.1 () {48 vars in 979 bytes} [Sat Mar 21 10:15:44 2020] GET /df_cart/ => generated 8355 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 20/57] 127.0.0.1 () {48 vars in 980 bytes} [Sat Mar 21 10:15:46 2020] GET /user/info => generated 3570 bytes in 254 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4257|app: 0|req: 21/58] 127.0.0.1 () {48 vars in 963 bytes} [Sat Mar 21 10:15:48 2020] GET / => generated 6700 bytes in 600 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 4257|app: 0|req: 22/59] 127.0.0.1 () {48 vars in 974 bytes} [Sat Mar 21 10:15:54 2020] GET /list/1_1_1 => generated 4920 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 4255|app: 0|req: 25/60] 127.0.0.1 () {48 vars in 964 bytes} [Sat Mar 21 10:15:55 2020] GET / => generated 6700 bytes in 178 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)

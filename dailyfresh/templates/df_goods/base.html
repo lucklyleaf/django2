@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body1 %}
+    <div class="navbar_con">
+		<div class="navbar clearfix">
+			<div class="subnav_con fl">
+				<h1>全部商品分类</h1>
+				<span></span>
+				<ul class="subnav">
+					<li><a href="/list/1_1_1" class="fruit">新鲜水果</a></li>
+					<li><a href="/list/2_1_1" class="seafood">海鲜水产</a></li>
+					<li><a href="/list/3_1_1" class="meet">猪牛羊肉</a></li>
+					<li><a href="/list/4_1_1" class="egg">禽类蛋品</a></li>
+					<li><a href="/list/5_1_1" class="vegetables">新鲜蔬菜</a></li>
+					<li><a href="/list/6_1_1" class="ice">速冻食品</a></li>
+				</ul>
+			</div>
+			<ul class="navlist fl">
+				<li><a href="/">首页</a></li>
+				<li class="interval">|</li>
+				<li><a href="">手机生鲜</a></li>
+				<li class="interval">|</li>
+				<li><a href="">抽奖</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="breadcrumb">
+		<a href="#">全部分类</a>
+        {% if typeinfo %}
+		<span>></span>
+		<a href="#">{{ typeinfo.ttitle }}</a>
+        {% endif %}
+        {% if g %}
+        <span>></span>
+		<a href="/list/{{ g.gtype.id }}_1_1">{{ g.gtype}}</a>
+        <sapn>></sapn>
+        <a href="#">商品详情</a>
+        {% endif %}
+	</div>
+    {% block body2 %}
+    {% endblock body2 %}
+{% endblock body1 %}
