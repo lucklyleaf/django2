@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{tilte}}</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/user.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('.code').click(function () {
+                $(this).attr('src', $(this).attr('src') + '?' + Math.random())
+            })
+
+              if ({{ error_yan|default:2}} == 1)
+                        {
+                            $('.error_yan').show();
+                        }
+              if ({{ error_user|default:2}} == 1)
+                        {
+                            $('.error_pwd').show();
+                        }
+        })
+    </script>
+
+</head>
+<body>
+
+<div  class="la">
+    <label>{{ er }}</label>
+    <label style="font-size: 30px">学生成绩管理系统</label><br>
+    <a href="../admin" class="ad">管理员登录入口</a>
+</div>
+<div class="form_input">
+    <form action="/t_user/login_handle" method="post">
+        {% csrf_token %}
+        <input type="text" class="user_input" required="required" value="{{ user }}"  id="user" name="user" placeholder="用户名" title="用户名" autocomplete="off">
+        <input type="password" class="pwd_input" required='required' value="{{ pwd }}" id="pwd" name="pwd" placeholder="密码" title="密码">
+        <label class="error_pwd">用户名或密码错误，请重新输入！</label>
+        <input class='txt' type="text" name="code" autocomplete="off">
+        <img class='code' src="/t_user/verifyCode" title="点击刷新">
+        <label class="error_yan">验证码错误！</label>
+        <div class="more_input clearfix">
+            <input type="checkbox" value="1" name="jizhu" checked="checked">
+            <label>记住用户名</label>
+            <a href="#">忘记密码</a>
+        <input type="submit" id="login" value="登录" class="input_submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>

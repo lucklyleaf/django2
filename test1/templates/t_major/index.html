@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/index.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+       $(function () {
+           a = 0
+           $('tr').each(function () {
+               a++
+              if(a%2 == 0){
+                  $(this).css('background-color','#75767f')
+              }
+           })
+            $('.td7').each(function(){
+                 var td1 = Number($(this).siblings('#td1').text())
+                 var td2 = Number($(this).siblings('#td2').text())
+                 var td3 = Number($(this).siblings('#td3').text())
+                 var td4 = Number($(this).siblings('#td4').text())
+                 var td5 = Number($(this).siblings('#td5').text())
+                 var td6 = Number($(this).siblings('#td6').text())
+                 var td = td1+td2+td3+td4+td5+td6
+                 $(this).text(td)
+                if(td1==0){
+                    $(this).siblings('#td1').text(null)
+                }
+                if(td2==0){
+                    $(this).siblings('#td2').text(null)
+                }
+                if(td3==0){
+                    $(this).siblings('#td3').text(null)
+                }
+                if(td4==0){
+                    $(this).siblings('#td4').text(null)
+                }
+                if(td5==0){
+                    $(this).siblings('#td5').text(null)
+                }
+                if(td6==0){
+                    $(this).siblings('#td6').text(null)
+                }
+            })
+       })
+    </script>
+</head>
+<body>
+<label id="dat"></label>
+<div class="t_login">
+    <a href="/t_user">教师登录入口</a>
+    <a href="/admin">管理员登录入口</a>
+</div>
+<div class="source_from">
+    <form action="/" method="post">
+        {% csrf_token %}
+    <input type="text" id="xuehao" name="xuehao" placeholder="请输入学号"class="cx">
+    <input type="submit" id="btn" value="查询"class="btn">
+    </form>
+</div>
+<div class="table">
+    <label>学号：{{xuehao}}&nbsp;&nbsp;&nbsp;&nbsp;姓名：{{ uname.sname }}&nbsp;&nbsp;&nbsp;&nbsp;班级：{{ uname.grade}} </label>
+    <a href="javascript:;">查看详细成绩</a>
+    <table style="text-align: center">
+        <tr>
+            <th>语文</th>
+            <th>数学</th>
+            <th>英语</th>
+            {% if num.clnature == 1 %}
+            <th>物理</th>
+            <th>化学</th>
+            <th>生物</th>
+            {% endif %}
+            {% if num.clnature == 2 %}
+            <th>历史</th>
+            <th>地理</th>
+            <th>政治</th>
+            {% endif %}
+            <th>总分</th>
+            <th>考试类型</th>
+            <th>考试时间</th>
+        </tr>
+
+        {% for sdata,s in h %}
+        <tr>
+            <td id="td1">{{ s.语文|default:0}}</td>
+            <td id="td2">{{ s.数学|default:0}}</td>
+            <td id="td3">{{ s.英语|default:0}}</td>
+            {% if num.clnature == 1 %}
+            <td id="td4">{{ s.物理|default:0}}</td>
+            <td id="td5">{{ s.化学|default:0}}</td>
+            <td id="td6">{{ s.生物|default:0}}</td>
+            {%endif %}
+            {% if num.clnature == 2 %}
+            <th>{{s.历史|default:0}}</th>
+            <th>{{s.地理|default:0}}</th>
+            <th>{{s.政治|default:0}}</th>
+            {% endif %}
+            <td class="td7"></td>
+            {% if s.type == 2 %}
+            <td>期中考试</td>
+            {% endif %}
+            {% if s.type == 3 %}
+            <td>期末考试</td>
+            {% endif %}
+             {% if s.type == 4 %}
+            <td>模拟考试</td>
+            {% endif %}
+            <td>{{ sdata }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+<div>
+    <p></p>
+</div>
+</body>
+</html>

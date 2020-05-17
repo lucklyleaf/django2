@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/css/index.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/t_major_teacher.css">
+</head>
+<script>
+    $(function () {
+        i = 0
+        $('tr').each(function () {
+            i++
+            if(i==1){
+                $(this).css('background', '#353aff')
+            }
+            else if(i%2==1 ){
+                $(this).css('background', '#93a2ff')
+            }else{
+                $(this).css('background', '#ebf0ff')
+            }
+        })
+    })
+</script>
+<body>
+<div class="head1">
+    <lable>欢迎您 {{username}}老师</lable>
+    <a href="/logout">退出登录</a>
+</div>
+<div class="s_from">
+    <form method="post" action="/select_source/1">
+        <input type="text" id="xuehao" name="xuehao" required='required' placeholder="请输入学号" class="cx">
+        <input type="submit" id="btn" value="查询"class="btn">
+    </form>
+</div>
+<div class="div_from">
+    <a class="lable " href="/ordinary/1">主页</a>
+    <a class="lable lable1" id='jg' href="#">查询结果</a>
+    <a href="#" class="tj">添加成绩</a>
+    <div class="div_biao1">
+        <table class="table1">
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>班级</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>班级排名</th>
+                <th>班级平均分</th>
+                <th>参考人数</th>
+                <th>考试类型</th>
+                <th>考试时间</th>
+            </tr>
+            {% for da,g in P %}
+            <tr>
+                <td>{{ g.xh}}</td>
+                <td>{{ g.xs }}</td>
+                <td>{{ g.banji }}</td>
+                <td>{{ g.kc }}</td>
+                <td>{{ g.grade }}</td>
+                <td>{{ g.p|add:+1 }}</td>
+                <td>{{ g.avg.sscore__avg }}</td>
+                <td>{{ g.count }}</td>
+                {% if g.type == 1 %}
+                <td>平时考试</td>
+                {% endif %}
+                {% if g.type == 2 %}
+                <td>期中考试</td>
+                {% endif %}
+                {% if g.type == 3 %}
+                <td>期末考试</td>
+                {% endif %}
+                {% if g.type == 4 %}
+                <td>模拟考试</td>
+                {% endif %}
+                <td>{{ g.da }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="pagenation">
+            {% if page.has_previous %}
+            <a href="/select_source/{{ page.previous_page_number }}">&lt;上一页</a>
+            {% endif %}
+            {% for pindex in paginator.page_range %}
+            {% if pindex == page.number %}
+            <a href="#" class="active">{{ pindex }}</a>
+            {% else %}
+            <a href="/select_source/{{ pindex }}">{{ pindex }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page.has_next %}
+            <a href="/select_source/{{ page.next_page_number }}">下一页></a>
+            {% endif %}
+        </div>
+    <label>{{ error }}</label>
+    </div>
+<div>
+</body>
+</html>

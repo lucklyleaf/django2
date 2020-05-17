@@ -1,0 +1,17 @@
+body{padding: 0;margin: 0;}
+.t_login{width: 80%;height: 50px;position:absolute;left:0;right:0;margin:auto;top:40px;text-align: center;line-height: 60px;font-size: 25px}
+.t_login a{}
+.source_from{width: 400px;position: absolute;top:120px;left: 0;right: 0;margin:auto;background-color: cornflowerblue;text-align: center;font-family:'Microsoft Yahei';}
+.cx{border:2px solid rgba(100, 104, 245, 0.99);height: 40px;width:320px;box-sizing: border-box;letter-spacing: 2px;text-indent: 10px;float: left;font-size: 20px}
+.btn{background-color: rgba(94, 98, 230, 0.99);height: 40px;width:80px;border:none;float: left;margin-left: 0px;font-size: 20px;cursor: pointer;outline: none;}
+.table{width:60%;position: absolute;top:190px;left: 0;right:0;margin: auto;background-color: #afb1ac;}
+.table label{float:left;margin-left:30px;margin-top:10px}
+.table a{float:right;margin-right:30px;margin-top:10px}
+.table table{float:left;width:100%;margin-top:17px; border-collapse: collapse;}
+tr{border-bottom:2px solid rgba(126, 119, 136, 0.38);}
+td{padding-top:15px ;padding-bottom:15px ;}
+.td7{}
+/* 清除浮动 */
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1}

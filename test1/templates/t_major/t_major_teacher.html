@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/css/index.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/t_major_teacher.css">
+    <script>
+        $(function () {
+            $('.li').each(function () {
+
+                    if ($(this).text() == "{{ cl }}") {
+                        $(this).addClass('back_li')
+                        $(this).removeClass('li')
+                    }
+                })
+            $('.div_jt').hide()
+            $('.reg_xg').hide()
+            a = 0
+            $('.div_biao1 table tr').each(function () {
+                a++
+                if(a==1){
+                    $(this).css('background-color', '#903d7c')
+                }
+                if(a%2 == 0){
+                    $(this).css('background-color','#75767f')
+                 }
+             })
+            $('.lable').click(function () {
+                    $('.lable').removeClass('lable1')
+                    $(this).addClass('lable1')
+                })
+            $('#xx').click(function () {
+                $('.div_biao1').css('display', 'none')
+                $('.div_xx').css('display', 'block')
+            })
+            $('.lable1').click(function () {
+                $('.div_xx').css('display', 'none')
+                $('.div_biao1').css('display', 'block')
+                $('.div_jt').hide()
+                $('.reg_xg').hide()
+            })
+            $('.uqdate').click(function () {
+                $('.div_jt').css('display','block')
+                $('.reg_xg').show()
+            })
+            var username_error = false
+            $('#username').blur(function () {
+                var re=/^[\u4E00-\u9FA5]{1,6}$/
+                if($(this).val() == '' ){
+                    $(this).next().html('请输入姓名！')
+                    $(this).next().show()
+                    username_error = false
+                }
+                else if(re.test($(this).val())){
+                    $(this).next().hide()
+                    username_error = true
+                }
+                else{
+                    $(this).next().text('输入不超过六个字符的中文！')
+                    $(this).next().show()
+                    username_error = false
+                }
+            })
+            var pwd_error = false
+            $('#pwd').blur(function () {
+                re = /^[0-9a-zA-Z_].{5,11}$/
+                if(re.test($(this).val())){
+                    $(this).next().hide()
+                    pwd_error = true
+                }else{
+                    $(this).next().text('请输入以字母，数字，下划线开头的6位到12位字符！')
+                    $(this).next().show()
+                    pwd_error = false
+                }
+            })
+            var pwd_error1 = false
+            $('#pwd1').blur(function () {
+                if($(this).val() == $('#pwd').val()){
+                    $(this).next().hide()
+                    pwd_error1 = true
+                }
+                else{
+                    $(this).next().text('两次密码输入不相等！')
+                    $(this).next().show()
+                    pwd_error1 = false
+                }
+            })
+            var number_error = false
+            $('#number').blur(function () {
+                re = /^[0-9]{11}$/
+                if(re.test($(this).val())){
+                    $(this).next().hide()
+                    number_error = true
+                }else {
+                    $(this).next().text('请输入是11位数字的手机号')
+                    $(this).next().show()
+                    number_error = false
+                }
+            })
+            $('.input_btn').click(function () {
+                var obj=document.getElementsByName("sex")
+                for(var i=0;i<obj.length;i++){
+                    if(obj[i].checked){
+                        var sex = obj[i].value
+                    }
+                }
+                if(username_error == true&&pwd_error == true&&pwd_error1 == true&&number_error == true) {
+
+                    $.post('/uqdate', {
+                        username: $('#username').val(),
+                        pwd: $('#pwd').val(),
+                        sex: sex,
+                        number: $('#number').val()
+                    }, function (data, status) {
+                        if (data.data == 'ok') {
+                            $('.div_ok').find('#ll').text('修改成功！')
+                            setTimeout(function () {
+                                $('#username').val('')
+                                $('#pwd').val('')
+                                $('#number').val('')
+                                $('.div_ok').hide()
+                                $('.div_jt').hide()
+                                $('.reg_xg').hide()
+                            }, 1000)
+                        } else {
+                            $('.div_ok').find('#ll').text('修改失败！' + '<' + 'br' + '/' + '>' + '原因：' + data.data)
+                        }
+                        $('.div_ok').show()
+                    })
+                }else{
+                    $('.div_ok').find('#ll').text('请检查输入是否正确！')
+                    $('.div_ok').show()
+                    setTimeout(function () {
+                        $('.div_ok').hide()
+                    },1000)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<lable>{{ dt }}</lable>
+<div class="div_ok">
+    <label id="ll"></label>
+</div>
+<div class="head1">
+    <lable>欢迎您 {{username}}老师</lable>
+    <a href="/logout">退出登录</a>
+</div>
+<div class="s_from">
+    <form method="post" action="/select_source/1">
+        <input type="text" id="xuehao" name="xuehao" required='required' placeholder="请输入学号"class="cx">
+        <input type="submit" id="btn" value="查询"class="btn">
+    </form>
+</div>
+<div class="div_from">
+    <a class="lable lable1" href="#">主页</a>
+    <a class="lable " id='xx' href="#">个人信息</a>
+    <a href="#" class="tj">添加成绩</a>
+    <div class="div_biao1">
+        <ul>
+            <li style="text-align: left;font-size: 25px;background-color: #343132;color: white">我的班级</li>
+            {% for bj in banji %}
+            <li class="li" ><a href="javascript:void(0);" onclick="document.getElementById('myform{{ forloop.counter }}').submit();" >{{bj}}</a></li>
+            <form id="myform{{ forloop.counter }}" method="post" action="/ordinary/1" style="display:none">
+            <input type="text" id="grade{{ forloop.counter }}" name="grade" value="{{ bj }}">
+            </form>
+            {% endfor %}
+        </ul>
+        <table class="table">
+            <tr>
+                <th>考试类型</th>
+                <th>考试时间</th>
+                <th>科目</th>
+                <th>平均分</th>
+                <th>超过平均分人数</th>
+                <th>总人数</th>
+                <th>查看详情</th>
+            </tr>
+            {% for d,g in page %}
+            <tr>
+                {% if g.gtype == 1 %}
+                <td>平时考试</td>
+                {% endif %}
+                {% if g.gtype == 2 %}
+                <td>期中考试</td>
+                {% endif %}
+                {% if g.gtype == 3 %}
+                <td>期末考试</td>
+                {% endif %}
+                {% if g.gtype == 4 %}
+                <td>模拟考试</td>
+                {% endif %}
+                <td>{{ g.data }}</td>
+                <td>{{ g.km }}</td>
+                <td>{{ g.avg.avg }}</td>
+                <td>{{ g.c_avg }}</td>
+                <td>{{ g.count }}</td>
+                <td><a href="/select_xiangqing/1?data={{ g.data }}&banji={{ cl }}">查看</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+         <div class="pagenation1">
+            {% if page.has_previous %}
+            <a href="/ordinary/{{ page.previous_page_number }}">&lt;上一页</a>
+            {% endif %}
+            {% for pindex in paginator.page_range %}
+            {% if pindex == page.number %}
+            <a href="#" class="active">{{ pindex }}</a>
+            {% else %}
+            <a href="/ordinary/{{ pindex }}">{{ pindex }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page.has_next %}
+            <a href="/ordinary/{{ page.next_page_number }}">下一页></a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="div_xx">
+        <table>
+            <tr>
+                <td>姓名：</td>
+                <td> {{users.tname}} </td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                {% if users.tsex == 1%}
+                 <td> 男 </td>
+                {% endif %}
+                {% if users.tsex == 2%}
+                 <td> 女 </td>
+                {% endif %}
+            </tr>
+            <tr>
+                <td>联系方式：</td>
+                 <td>{{ users.tnumber }}</td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                 <td>{{ users.tpwd }}</td>
+            </tr>
+            <tr>
+                <td>所带课程：</td>
+                 <td>数学</td>
+            </tr>
+            <tr>
+                <td>所带班级：</td>
+                <td>
+                    <ul class="bj_ul">
+                        {% for bj in banji%}
+                        <li class="bj">{{ bj }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: -webkit-center"><a href="javascript:;" class="uqdate">修改个人信息</a></td>
+            </tr>
+        </table>
+        <div class="div_jt"></div>
+        <div class="reg_xg">
+            <ul>
+                <li>
+                    <label for="username">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                    <input class='input' type="text" id="username" value="{{ users.tname }}" name="username" autocomplete="off">
+                    <span></span>
+                </li>
+                <li>
+                    <label for="pwd">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                    <input class='input' type="password" id="pwd" name="pwd" value="{{ users.tpwd }}" >
+                    <span></span>
+                </li>
+                <li>
+                    <label for="pwd">确认密码：</label>
+                    <input class='input' type="password" id="pwd1" name="pwd1">
+                    <span></span>
+                </li>
+                <li>
+                    <label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+                    {% if users.tsex == 1 %}
+                    <input type="radio"  name="sex" value="1" checked="checked" >男
+                    <input type="radio"  name="sex" value="2">女
+                    {% endif %}
+                    {% if users.tsex == 2 %}
+                    <input type="radio"  name="sex" value="1">男
+                    <input type="radio"  name="sex" value="2" checked="checked">女
+                    {% endif %}
+                </li>
+                <li>
+                    <label for="number">联系方式：</label>
+                    <input class='input'  type="text" name="number" value="{{ users.tnumber }}" id="number">
+                    <span></span>
+                </li>
+                <li style="text-align: center">
+                    <input type="submit" value="修改" class='input_btn'>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

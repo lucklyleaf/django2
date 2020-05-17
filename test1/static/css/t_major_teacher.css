@@ -1,0 +1,70 @@
+.body{padding: 0;margin:0;}
+.head1{font-size:20px;position: fixed;top:10px;right:40px}
+.s_from{width: 400px;position: absolute;top:70px;left: 0;right: 0;margin:auto;background-color: cornflowerblue;text-align: center;font-family:'Microsoft Yahei';}
+.div_from{width:60%;margin:140px auto;position: relative;}
+.lable{font-size: 20px;float:left;margin-left:0;text-decoration: none;}
+.lable1{background-color: #9e9e9e}
+.lable:hover{color: coral}
+.div_biao1,.div_xx{width:100%;position:absolute;top:30px;border-top:3px solid #9f9f9f}
+.div_biao1 ul{float: left;width:15%;font-size: 20px;margin-left:-40px;margin-top:0px;}
+.div_biao1 ul li{list-style-type: none;padding: 10px 5px;border-bottom:2px solid #737373;text-align: center}
+.div_biao1 ul li a{text-decoration: none;color: #1e1e1e}
+.table,.table1{float:left;box-sizing: border-box;background-color: #7a7079;color: #e9e9e9;border-collapse: collapse;text-align: center}
+.table1{width:100%;color: black}
+.table{width:85%;margin-left:15%;margin-top:-190px}
+.div_xx{display: none;box-sizing: border-box; }
+.div_xx table{float: left;}
+.div_jt{animation:mymove 3s 1 ease-in-out;animation-delay:0.1s;animation-fill-mode:forwards;width:0;height: 0;float: left;margin-top:100px;opacity:0;border-left:60px solid #9e9e9e;border-top:30px solid transparent;border-bottom:30px solid transparent;display: none;}
+@keyframes mymove {
+    0%{
+        margin-left:0 ;
+        opacity: 0;
+    }
+    100%{
+        margin-left:150px;
+        opacity: 1.0;
+        transform: rotate(360deg);
+    }
+}
+tr{border-bottom:2px solid rgba(181, 171, 195, 0.38);}
+td{padding-top:15px ;padding-bottom:15px ;}
+.back_li{background-color: #696969}
+.li{background-color: #dcdcdc}
+.li:hover{background-color: #a7a8b6}
+.tj{float: right;margin-right:20px;font-size: 20px}
+.reg_xg{float: left;margin-left:100px;width:400px;opacity: 0;animation:mymo 3s 1 ease-in-out;animation-fill-mode: forwards;display: none}
+@keyframes mymo {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.reg_xg ul li{list-style: none;height:30px;padding-bottom:20px;width: 400px;}
+.reg_xg ul li label{width: 100px;float: left;font-size: 15px}
+.input{height:25px;width:200px;box-sizing: border-box;outline: none;text-indent: 10px;}
+.input_btn{border:none;width:200px;height:30px;outline: none;cursor: pointer}
+.input_btn:hover{width:210px;height:32px;font-size:18px;background-color: cornflowerblue}
+.reg_xg ul li span{display:none;color: red;margin-left:100px;font-size: 12px}
+.div_ok{width:400px;height:200px;display:none; text-align: center;position: fixed;top:180px;left:0;right:0;margin:auto;background-color:#9f9f9f;box-shadow: 0px 0px 10px chocolate;opacity:0.7;z-index:11}
+.div_ok label{line-height: 200px;font-size: 30px;color: red;}
+.pagenation{height:32px;text-align:center;font-size:0;margin:30px auto;}
+.pagenation a{text-decoration:none;display:inline-block;border:1px solid #d2d2d2;background-color: #a8a7a7;font-size:15px;padding:7px 10px;color:#666;margin:5px}
+.pagenation .active{background-color:#fff;color:#43a200}
+.pagenation1{float: right;height:32px;font-size:0;margin-top:300px;text-align: -webkit-center}
+.pagenation1 a{text-decoration:none;display:inline-block;border:1px solid #d2d2d2;background-color: #a8a7a7;font-size:15px;padding:7px 10px;color:#666;margin:5px}
+.pagenation1 .active{background-color:#fff;color:#43a200}
+.del_btn{width:150px;height:30px;border: none;color:white;background-color: #6e66ed;float:right;margin-right:40px; outline: none;cursor: pointer;font-size: 20px}
+.del_btn:hover{background-color: #4c558b;}
+.bj{list-style: none;}
+.bj_ul{margin-left:-20px}
+.div_xg{display:none;z-index:10;text-align:center;width:400px;height:40px;box-sizing: content-box;position: fixed;top:200px;left:0px;right:0px;margin: auto;background-color: cornsilk;box-shadow: 5px 5px rgba(230, 145, 43, 0.76)
+}
+.div_xg input{border:none;outline: none;}
+.div_xg label{font-size: 20px;line-height: 40px;float: left}
+.qx,.sub{width:80px;height:40px;box-sizing: border-box;float: right;margin-right:0px;}
+.qx{background-color: cornflowerblue}
+.qx:hover{background-color: #b1a79b}
+.sub:hover{background-color: #b1a79b}
+#xg_source{float:left;margin-left:0px;width:178px;height:40px;box-sizing: border-box;text-indent: 10px}

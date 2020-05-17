@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/css/index.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/t_major_teacher.css">
+</head>
+<script>
+    $(function () {
+        i = 0
+        $('tr').each(function () {
+            i++
+            if(i==1){
+                $(this).css('background', '#353aff')
+            }
+            else if(i%2==1 ){
+                $(this).css('background', '#93a2ff')
+            }else{
+                $(this).css('background', '#ebf0ff')
+            }
+        })
+        $('.xh').each(function () {
+            var td2 = $(this).next()
+            $.get('/sl_sname?snum='+$(this).text(),function (data) {
+                a=data.name
+                td2.text(a)
+
+            })
+        })
+        $('#check_all').click(function () {
+                state = $(this).prop('checked');
+                $(':checkbox:not(#check_all)').prop('checked', state);
+        });
+        $(':checkbox:not(#check_all)').click(function () {
+            if($(this).prop('checked')){
+                if($(':checked').length+1==$(':checkbox').length){
+                    $('#check_all').prop('checked', true);
+                }
+            }else {
+                $('#check_all').prop('checked', false);
+            }
+        })
+        $('.del').each(function () {
+            $(this).click(function () {
+               a=$(this).parent('td').siblings('.td2').text()
+               $.get('/del?a='+a,function (data) {
+                    if(data.ok==1){
+                        $('#ll').text('删除成功！')
+                        $('.div_ok').show()
+                        setTimeout(function () {
+                            $('.div_ok').hide()
+                            history.go(0)
+                        },1000)
+                    }else{
+                        alert('删除失败')
+                    }
+               })
+            })
+        })
+        $('.xx_update').each(function () {
+            $(this).click(function () {
+                $('.xx_id').text($(this).parent('td').siblings('.td2').text())
+                $('#xg_source').val($(this).parent('td').prev().prev().prev().text())
+                $('.div_xg').show($)
+            })
+        })
+        $('.qx').click(function () {
+            $('.div_xg').hide()
+        })
+        $('.sub').click(function () {
+            a = $('#xg_source').val()
+            b = $('.xx_id').text()
+            $.post('/cj_update',{
+                xx_id:b,
+                xx_cj:a
+            },function (data) {
+                if(data.data=='ok'){
+                    $('#ll').text('修改成功！')
+                    $('.div_ok').show()
+                    setTimeout(function () {
+                         $('.div_ok').hide()
+                         history.go(0)
+                    },1000)
+                }
+            })
+        })
+    })
+</script>
+<body>
+<label>{{ page }}</label>
+<div class="div_ok">
+    <label id="ll"></label>
+</div>
+<div class="div_xg">
+    <label>成绩：</label>
+    <lable class="xx_id" style="display: none"></lable>
+    <input type="text" id="xg_source" name="xg_source">
+    <input type="button" value="取消" class="qx">
+    <input type="button" value="提交" class="sub">
+</div>
+<div class="head1">
+    <lable>欢迎您 {{username}}老师</lable>
+    <a href="/logout">退出登录</a>
+</div>
+<div class="s_from">
+    <form method="post" action="/select_source/1">
+        <input type="text" id="xuehao" name="xuehao" required='required' placeholder="请输入学号" class="cx">
+        <input type="submit" id="btn" value="查询"class="btn">
+    </form>
+</div>
+<div class="div_from">
+    <a class="lable " href="/ordinary/1">主页</a>
+    <a class="lable lable1" id='jg' href="#">{{ banji }}&nbsp;&nbsp;&nbsp;&nbsp;{{ kc }}成绩 &nbsp;&nbsp;&nbsp;&nbsp;时间:{{ data }}&nbsp;&nbsp;&nbsp;&nbsp;平均分：{{ pj.avg }}</a>
+    <a href="javascript:;" class="tj">删除全部</a>
+    <a href="#" class="tj">添加成绩</a>
+    <div class="div_biao1">
+        <table class="table1">
+            <tr>
+                <th><input type="checkbox" id="check_all">全选</th>
+                <th style="display:none" >id</th>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>成绩</th>
+                <th>班级排名</th>
+                <th>删除</th>
+                <th>修改</th>
+            </tr>
+            {% for g in ll %}
+            <tr>
+                <td><input type="checkbox"></td>
+                <td style="display:none" class="td2">{{ g.id }}</td>
+                <td class="xh">{{ g.snum }}</td>
+                <td></td>
+                <td>{{ g.sscore }}</td>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="javascript:;" class="del">删除</a></td>
+                <td><a href="javascript:;" class="xx_update">修改</a></td>
+            </tr>
+            {% endfor %}
+            <tr >
+                <td colspan="7">
+                    <input type="button" class="del_btn" id="btn" value="删除选中项">
+                    <input type="button" class="del_btn" id="pl_xg" value="修改选中项">
+                </td>
+
+            </tr>
+        </table>
+        <div class="pagenation">
+            {% if page.has_previous %}
+            <a href="/select_xiangqing/{{ page.previous_page_number }}">&lt;上一页</a>
+            {% endif %}
+            {% for pindex in paginator.page_range %}
+            {% if pindex == page.number %}
+            <a href="#" class="active">{{ pindex }}</a>
+            {% else %}
+            <a href="/select_xiangqing/{{ pindex }}">{{ pindex }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page.has_next %}
+            <a href="/select_xiangqing/{{ page.next_page_number }}">下一页></a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
